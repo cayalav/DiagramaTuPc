@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="3">
+  <ClassDiagramComponents>
+    <Class name="TuPc.Com" package="" visibility="public" xPosition="374.0" yPosition="69.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Desktop" package="" visibility="public" xPosition="465.0" yPosition="504.0">
+      <Fields>
+        <Field name="serial" type="String" visibility="private"/>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="ram" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Portatil" package="" visibility="public" xPosition="92.0" yPosition="466.0">
+      <Fields>
+        <Field name="serial" type="String" visibility="private"/>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="ram" type="String" visibility="private"/>
+        <Field name="diametroPantalla" type="String" visibility="private"/>
+        <Field name="peso" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Bodega" package="" visibility="public" xPosition="789.0" yPosition="140.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Servidor" package="" visibility="public" xPosition="818.0" yPosition="447.0">
+      <Fields>
+        <Field name="serial" type="String" visibility="private"/>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="numeroProcesadores" type="int" visibility="private"/>
+        <Field name="numeroDiscoDuro" type="int" visibility="private"/>
+        <Field name="cantidadRam" type="int" visibility="private"/>
+        <Field name="cantidadTarjetaRed" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="Server" source="TuPc.Com" target="Servidor" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="Servidor" source="Bodega" target="Servidor" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="Escritorio" source="TuPc.Com" target="Desktop" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="Bodegas" source="Portatil" target="Bodega" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="Bodegas" source="Servidor" target="Bodega" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="Bodegas" source="TuPc.Com" target="Bodega" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="Portatil" source="Bodega" target="Portatil" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="Portatil" source="TuPc.Com" target="Portatil" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="Escritorio" source="Bodega" target="Desktop" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="Bodegas" source="Desktop" target="Bodega" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
